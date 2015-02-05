@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Web Components</title>
+    	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+</head>
+<body>
+	<template id="mytemplate">
+	  <img src=""> <!-- dynamically populate at runtime -->
+	  <div class="comment"></div>
+	</template>
+
+	<script>
+	  var t = document.querySelector('#mytemplate');
+	  t.content.querySelector('img').src = 'http://webcomponents.org/img/logo.svg'; // Populate the src at runtime.
+	  document.body.appendChild(t.content.cloneNode(true));
+	</script>
+</body>
+</html>

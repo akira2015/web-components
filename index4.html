@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Web Components</title>
+    	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    	<style>
+	@host {
+	  * { opacity: 0.2; transition: opacity 400ms ease-in-out; }
+	  *:hover { opacity: 1; }
+	}
+	</style>
+</head>
+	<div id="host">
+	  <h1>My Title</h1>
+	  <h2>My Subtitle</h2>
+	  <div> ...other content...</div>
+	</div>
+	<script>
+		var host = document.querySelector('#host');
+		var shadow = host.createShadowRoot();
+		shadow.innerHTML =  '<style>h2 { color: red; }</style>' + 
+			 '<h2>Yo, you got replaced!</h2>' +
+		                   '<div>by my awesome content</div>';
+	</script>
+</body>
+</html>
